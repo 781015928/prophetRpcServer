@@ -1,0 +1,41 @@
+syntax = "proto3";
+package prophet.proto;
+
+
+message TimeSequence
+  {
+     string date_time = 1;
+     double value =2;
+
+}
+
+message ProphetRequest{
+
+  repeated TimeSequence sequences=1;
+
+
+   string freq=2;
+
+}
+message Response
+{
+   string message = 1;
+
+   int32 code = 2;
+
+   ProphetResponse data = 3;
+
+
+}
+message ProphetResponse
+{
+   string date_time = 1;
+
+   double forecastValue = 2;
+
+   double forecastValue_lower = 3;
+
+   double forecastValue_upper = 4;
+
+
+}

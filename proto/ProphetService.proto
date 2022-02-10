@@ -1,0 +1,13 @@
+
+syntax = "proto3";
+package prophet.proto;
+
+
+import 'ProphetModel.proto';
+
+option py_generic_services  = true;
+
+service ProphetService
+{
+  rpc forecast(ProphetRequest) returns(Response);
+}
